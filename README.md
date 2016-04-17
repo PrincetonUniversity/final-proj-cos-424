@@ -8,6 +8,7 @@ NOTES FOR EVERYUONE
 3. make changes only in the cloned repo in your personal folder so you don't interfere with others' stuff, then push it when it's ready. Don't push broken code.
 
 TODOs:
+
 [1] Type up project goal
 [2] Do Step (0) from the previous email (that involves retrieving and parsing the data in the same way as assignment 2).
 [3] Do Steps (1) and (2) from the previous email.  This involves setting up an ipython notebook in the repo, and retrieving the original 33-chromosome data.
@@ -15,5 +16,6 @@ TODOs:
 [5] Do Step (3) from the previous email.
 [6] Write the intro + background section of our paper (whole paper is ~8pages).
 [7] Write first part of methods section (the theory) of the paper.
+
 
 
