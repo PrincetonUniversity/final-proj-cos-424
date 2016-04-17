@@ -9,13 +9,13 @@ NOTES FOR EVERYUONE
 
 TODOs:
 
-[1] Type up project goal
-[2] Do Step (0) from the previous email (that involves retrieving and parsing the data in the same way as assignment 2).
-[3] Do Steps (1) and (2) from the previous email.  This involves setting up an ipython notebook in the repo, and retrieving the original 33-chromosome data.
-[4] Find related works. Read them, provide quick summaries of the relevant points useful to our project.
-[5] Do Step (3) from the previous email.
-[6] Write the intro + background section of our paper (whole paper is ~8pages).
-[7] Write first part of methods section (the theory) of the paper.
+1. Type up project goal
+2. Do Step (0) from the previous email (that involves retrieving and parsing the data in the same way as assignment 2).
+3. Do Steps (1) and (2) from the previous email.  This involves setting up an ipython notebook in the repo, and retrieving the original 33-chromosome data.
+4. Find related works. Read them, provide quick summaries of the relevant points useful to our project.
+5. Do Step (3) from the previous email.
+6. Write the intro + background section of our paper (whole paper is ~8pages).
+7. Write first part of methods section (the theory) of the paper.
 
 
 
