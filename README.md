@@ -45,7 +45,7 @@ Who still has to do this?
 ## Project tasks
 
 1. Type up project goal
-2. Retrieve and parse data + get more data from Barbra (WGBS methylation data).
+2. Retrieve and parse data + get more data from Barbra (WGBS methylation data) (Sean todo).
 3. Loot at the n x n correlation matrix to get the number of clusters k.  
    Look at the correlation matrices inside the clusters. 
    This involves setting up an ipython notebook in the repo, and retrieving the original 33-chromosome data.
@@ -53,5 +53,4 @@ Who still has to do this?
 5. Write TensorFlow EM GMM code for k clusters.
 6. Write the intro + background section of our paper (whole paper is ~8pages).
 7. Make a section on the dataset alone - describe its sparsity, number of chromosomes we're learning the clusters from, etc.
-8. Sean to ask Barbara for more WGBS methylated and more other methylated. 
 
