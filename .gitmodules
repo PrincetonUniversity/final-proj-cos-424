@@ -1,0 +1,3 @@
+[submodule "methylation_imputation"]
+	path = methylation_imputation
+	url = https://github.com/bjo/methylation_imputation.git
