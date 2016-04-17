@@ -12,6 +12,8 @@ A first-level `data/` directory may be formed locally with cached computation da
 
 The `methylation-imputation/` directory is the Assigment 2 directory with starter code and zipped raw data. It is a submodule.
 
+The `utils/` directory contains various factored helper functions.
+
 The first-level of the git directory contains various `jupyter` notebooks that run the models in our paper in addition to the directories named above.
 
 ## Installation
@@ -41,6 +43,16 @@ Who still has to do this?
 1. When you cd inside to the cyc424 in cycles, run source py/bin/activate to get a python3 env with sklearn.
 2. Make sure to use tmux to keep your computations alive
 3. Make changes only in the cloned repo in your personal folder so you don't interfere with others' stuff, then push it when it's ready. Don't push broken code.
+4. To use a `jupyter` notebook server hosted on cycles (but have graphical browser access on your local machine), see below section.
+
+#### Remote `jupyter` notebook setup
+
+Let `PORT` be some unused socket number (choose something between 10000 and 15000).
+
+0. `ssh` into `cycles` with the `ssh` option `-L8888:localhost:$PORT`
+1. Set up your `cycles` environment (including activating the virtual Python environment).
+2. In the directory containing the notebook you wish to edit, run `jupyter notebook --no-browser --port=$PORT`
+3. Open your browser locally, and navigate to `localhost:$PORT`
 
 ## Project tasks
 
