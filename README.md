@@ -34,7 +34,7 @@ Use `git clone --recursive ...` instead of just `git clone` so that the submodul
 Who still has to do this?
 
 * Jerry
-* Sean
+* Sean (I'm still permission denied)
 
 ### `cycles` Environment Usage
 
@@ -53,5 +53,5 @@ Who still has to do this?
 5. Write TensorFlow EM GMM code for k clusters.
 6. Write the intro + background section of our paper (whole paper is ~8pages).
 7. Make a section on the dataset alone - describe its sparsity, number of chromosomes we're learning the clusters from, etc.
-
+8. Sean to ask Barbara for more WGBS methylated and more other methylated. 
 
