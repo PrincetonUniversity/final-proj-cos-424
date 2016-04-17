@@ -66,3 +66,10 @@ Let `PORT` be some unused socket number (choose something between 10000 and 1500
 6. Write the intro + background section of our paper (whole paper is ~8pages).
 7. Make a section on the dataset alone - describe its sparsity, number of chromosomes we're learning the clusters from, etc.
 
+By 4/23:
+
+Vlad: [3] (finish by EOD 4/17), half of [4], [7]
+Sid: half of [4]
+Jerry: get started on [5]
+Sid and Jerry: [1] and [6]
+Sean: [2]
