@@ -36,7 +36,7 @@ Use `git clone --recursive ...` instead of just `git clone` so that the submodul
 Who still has to do this?
 
 * Jerry
-* Sean
+* Sean (I'm still permission denied)
 
 ### `cycles` Environment Usage
 
@@ -57,12 +57,12 @@ Let `PORT` be some unused socket number (choose something between 10000 and 1500
 ## Project tasks
 
 1. Type up project goal
-2. Do Step (0) from the previous email (that involves retrieving and parsing the data in the same way as assignment 2).
-3. Do Steps (1) and (2) from the previous email.  This involves setting up an ipython notebook in the repo, and retrieving the original 33-chromosome data.
+2. Retrieve and parse data + get more data from Barbra (WGBS methylation data) (Sean todo).
+3. Loot at the n x n correlation matrix to get the number of clusters k.  
+   Look at the correlation matrices inside the clusters. 
+   This involves setting up an ipython notebook in the repo, and retrieving the original 33-chromosome data.
 4. Find related works. Read them, provide quick summaries of the relevant points useful to our project.
-5. Do Step (3) from the previous email.
+5. Write TensorFlow EM GMM code for k clusters.
 6. Write the intro + background section of our paper (whole paper is ~8pages).
-7. Write first part of methods section (the theory) of the paper.
-8. Make a section on the dataset alone - describe its sparsity, number of chromosomes we're learning the clusters from, etc.
-
+7. Make a section on the dataset alone - describe its sparsity, number of chromosomes we're learning the clusters from, etc.
 
