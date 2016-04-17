@@ -6,7 +6,19 @@ Our final project is an extension to the second assignment, in which we aim to i
 
 We try to fit a GMM model with off-diagonal bands as nonzero covariances. This is hard because default GMM implementations do not suffice for fitting this model on such a large dataset (each tissue sample has on the order of ~450K values).
 
+## Directory description
+
+A first-level `data/` directory may be formed locally with cached computation data or unzipped raw data. This is intentionally git-ignored so that the repository does not store cacheable values.
+
+The `methylation-imputation/` directory is the Assigment 2 directory with starter code and zipped raw data. It is a submodule.
+
+The first-level of the git directory contains various `jupyter` notebooks that run the models in our paper in addition to the directories named above.
+
 ## Installation
+
+### Dependencies
+
+All the code uses Python 3; we assume typical machine learning libraries such as `pandas`, `numpy`, `scikit-learn`, etc. Please install them on-demand.
 
 ### Notice on `git clone`
 
