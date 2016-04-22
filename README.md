@@ -47,7 +47,7 @@ Let `PORT` be some unused socket number (choose something between 10000 and 1500
 0. `ssh` into `cycles` with the `ssh` option `-L8888:localhost:$PORT`
 1. Set up your `cycles` environment (including activating the virtual Python environment).
 2. In the directory containing the notebook you wish to edit, run `jupyter notebook --no-browser --port=$PORT`
-3. Open your browser locally, and navigate to `localhost:$PORT`
+3. Open your browser locally, and navigate to `localhost:8888`
 
 ## Project tasks
 
