@@ -51,20 +51,10 @@ Let `PORT` be some unused socket number (choose something between 10000 and 1500
 
 ## Project tasks
 
-1. Type up project goal
-2. Retrieve and parse data + get more data from Barbra (WGBS methylation data) (Sean todo).
-3. Loot at the n x n correlation matrix to get the number of clusters k.  
-   Look at the correlation matrices inside the clusters. 
-   This involves setting up an ipython notebook in the repo, and retrieving the original 33-chromosome data.
-4. Find related works. Read them, provide quick summaries of the relevant points useful to our project.
-5. Write TensorFlow EM GMM code for k clusters.
-6. Write the intro + background section of our paper (whole paper is ~8pages).
-7. Make a section on the dataset alone - describe its sparsity, number of chromosomes we're learning the clusters from, etc.
-
-By 4/23:
-
-Vlad: [3] (finish by EOD 4/17), half of [4], [7]
-Sid: half of [4]
-Jerry: get started on [5]
-Sid and Jerry: [1] and [6]
-Sean: [2]
+1. [SEAN] Retrieve and parse data + get more data from Barbra (WGBS methylation data)
+2. [SID] Find related works. Read them, provide quick summaries of the relevant points useful to our project.
+3. [JERRY] Write TensorFlow EM GMM code for k clusters.
+4. [SID] Write the intro + background section of our paper (whole paper is ~8pages).
+5. [VLAD] Make a section on the dataset alone - describe its sparsity, number of chromosomes we're learning the clusters from, etc.
+6. GMM on Diagonal using VLFeat
+7. Use PCA to get rid of covar on the genome vectors in R^p
