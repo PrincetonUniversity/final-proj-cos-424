@@ -33,11 +33,6 @@ Use `git clone --recursive ...` instead of just `git clone` so that the submodul
 1. Make sure you have a folder named just by your netid
 2. clone the repo inside of that folder (https://github.com/PrincetonUniversity/final-proj-cos-424)
 
-Who still has to do this?
-
-* Jerry
-* Sean (I'm still permission denied)
-
 ### `cycles` Environment Usage
 
 1. When you cd inside to the cyc424 in cycles, run source py/bin/activate to get a python3 env with sklearn.
