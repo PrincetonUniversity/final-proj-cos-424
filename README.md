@@ -51,10 +51,8 @@ Let `PORT` be some unused socket number (choose something between 10000 and 1500
 
 ## Project tasks
 
-1. [SEAN] Retrieve and parse data + get more data from Barbra (WGBS methylation data)
-2. [SID] Find related works. Read them, provide quick summaries of the relevant points useful to our project.
-3. [JERRY] Write TensorFlow EM GMM code for k clusters.
-4. [SID] Write the intro + background section of our paper (whole paper is ~8pages).
-5. [VLAD] Make a section on the dataset alone - describe its sparsity, number of chromosomes we're learning the clusters from, etc.
-6. GMM on Diagonal using VLFeat
-7. Use PCA to get rid of covar on the genome vectors in R^p
+1. [SEAN] Retrieve and parse data + get more data from Barbra (WGBS methylation data) - describe its sparsity, number of chromosomes we're learning the clusters from, etc.
+2. [SEAN] Re-run exploratory analysis on the new data, write up section on the dataset.
+3. [VLAD] Write code for diagonal GMM MLE predictor and argmax cluster predictor (also expectation predictor?)
+4. [JERRY] Write TensorFlow EM GMM code for tridiagonal matrix likelihood (inner product).
+5. [SID] Write methods section for GMM EM code and posterior marginalization (theory, no proofs needed).
