@@ -153,7 +153,7 @@ def marginal_posterior(xs, mus, sigmas, alphas):
     norm = tf_log_sum_exp(ll) # 1xN
     with tf.Session() as sess:
         ll, norm = sess.run((ll, norm))
-    return mus[:, O:D], sigmas[:, O:D], np.transpose(ll / norm)
+    return mus[:, O:D], sigmas[:, O:D], np.transpose(ll - norm)
 
 # A "sparser" estimate which just uses the most likely cluster's mean as the estimate.
 def argmax_exp(mus, sigmas, alphas):
@@ -219,4 +219,4 @@ def gd_mle(mus, sigmas, alphas, nsteps, tol, warning=None, verbose=False, minste
     if not at_least_one_conv_early and warning:
         print('Warning, none converged early:', warning)
         
-    return best_ll[1].reshape(-1)
+    return best_ll[1].reshape(-1) if best_ll[1] is not None else None
