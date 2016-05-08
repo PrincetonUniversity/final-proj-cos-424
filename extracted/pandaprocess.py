@@ -55,7 +55,7 @@ def parse(prefix, col):
             # processing one file #
 
             # take chr1
-            chr1df = filedf.loc[filedf['chr'] == 'chr1']
+            chr1df = filedf.loc[(filedf['chr'] == 'chr1') & (filedf['strand'] == '+')]
             
             # add ratio
             ratio = ((chr1df.MethylatedReadCount)+(chr1df.ConcordantMethylatedReadCount)) / \
