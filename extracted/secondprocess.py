@@ -28,35 +28,29 @@ globdf = pd.merge(filedf75, filedf76, on='start', how='inner')
 print '75,76'
 globdf = pd.merge(globdf, filedf77, on='start', how='inner')
 print '77'
-globdf = pd.merge(globdf, filedf78, on='start', how='inner')
-print '79'
-globdf = pd.merge(globdf, filedf79, on='start', how='inner')
-print '79'
+globdf.to_csv('out757677.csv', sep='\t')   
+globdf = pd.merge(filedf78, filedf79, on='start', how='inner')
+print '78,79'
 globdf = pd.merge(globdf, filedf80, on='start', how='inner')
 print '80'
-globdf = pd.merge(globdf, filedf81, on='start', how='inner')
-print '81'
-globdf = pd.merge(globdf, filedf82, on='start', how='inner')
-print '82'
+globdf.to_csv('out787980.csv', sep='\t')   
+globdf = pd.merge(filedf81, filedf82, on='start', how='inner')
+print '81,82'
 globdf = pd.merge(globdf, filedf83, on='start', how='inner')
 print '83'
-globdf = pd.merge(globdf, filedf84, on='start', how='inner')
-print '84'
-globdf = pd.merge(globdf, filedf85, on='start', how='inner')
-print '85'
+globdf.to_csv('out818283.csv', sep='\t')
+globdf = pd.merge(filedf84, filedf85, on='start', how='inner')
+print '84,85'
 globdf = pd.merge(globdf, filedf86, on='start', how='inner')
 print '86'
-globdf = pd.merge(globdf, filedf87, on='start', how='inner')
-print '87'
-globdf = pd.merge(globdf, filedf88, on='start', how='inner')
-print '88'
+globdf.to_csv('out848586.csv', sep='\t')
+globdf = pd.merge(filedf87, filedf88, on='start', how='inner')
+print '87,88'
 globdf = pd.merge(globdf, filedf89, on='start', how='inner')
 print '89'
-globdf = pd.merge(globdf, filedf90, on='start', how='inner')
-print '90'
+globdf.to_csv('out878889.csv', sep='\t')    
 
-# save
-globdf.to_csv('out.csv', sep='\t')        
+   
 
 
         
