@@ -131,6 +131,9 @@ def get_avg_r2_cv(K):
           print('covs', np.any(np.isnan(marginal_covs)), np.any(np.isfinite(marginal_covs)))
           print('alphas', np.any(np.isnan(np.exp(marginal_alphas[0]))), np.any(np.isfinite(np.exp(marginal_alphas[0]))))
           pred = gd_mle(marginal_means, marginal_covs, np.exp(marginal_alphas[0]), 50, EPS, warning='gd', verbose=False, minstep=1e-4)
+          if pred is None:
+            print('gd computation for mle screwed up, skipping')
+            continue
           pred = pred.reshape(-1)[:len(unobserved_tested_ix)]
         actual = X_test[len(train_ix):len(train_ix)+len(unobserved_tested_ix)]
         rmse = sklearn.metrics.mean_squared_error(actual, pred)
