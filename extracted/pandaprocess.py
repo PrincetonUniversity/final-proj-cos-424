@@ -69,10 +69,10 @@ def parse(prefix, col):
             else:
                 globdf = pd.merge(globdf, chr1df, on='start', how='inner')
 
-            col = col +1
+            
             # print col
             #print globdf.head()    
-                
+        col = col +1        
     # save
     globdf.to_csv(prefix + '.csv', sep='\t')        
 
