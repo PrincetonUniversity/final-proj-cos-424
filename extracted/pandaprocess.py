@@ -9,8 +9,8 @@ global col
 
 
 def main():
-    col = 0
-    parse('GSM1421', col)
+    parse('GSM14217', col)
+    parse('GSM14218', col)
 
 
 def parse(prefix, col):
@@ -45,7 +45,7 @@ def parse(prefix, col):
             #print globdf.head()    
         col = col +1        
     # save
-    globdf.to_csv('out.csv', sep='\t')        
+    globdf.to_csv(prefix + '.csv', sep='\t')        
 
 if __name__ == "__main__":
         main()
