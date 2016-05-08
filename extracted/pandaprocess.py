@@ -46,7 +46,7 @@ def main():
 def parse(prefix, col):
     first = True
     for file in glob.glob(prefix + '*.txt'):
-        filename = os.path.basename(file)
+        filename = os.path.basename(file)[:10]
         print os.path.basename(file)
         with open(file, 'r') as csvfile:
 
