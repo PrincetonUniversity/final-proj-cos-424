@@ -46,6 +46,7 @@ def main():
 def parse(prefix, col):
     first = True
     for file in glob.glob(prefix + '*.txt'):
+        filename = os.path.basename(file)
         print os.path.basename(file)
         with open(file, 'r') as csvfile:
 
@@ -60,9 +61,9 @@ def parse(prefix, col):
             ratio = ((chr1df.MethylatedReadCount)+(chr1df.ConcordantMethylatedReadCount)) / \
                     ((chr1df.MethylatedReadCount)+(chr1df.UnmethylatedReadCount)+(chr1df.ConcordantMethylatedReadCount)+(chr1df.ConcordantUnmethylatedReadCount))
 
-            chr1df['ratio' + str(col)] = ratio
+            chr1df[filename] = ratio
 
-            chr1df = chr1df[['start', 'ratio' + str(col)]]
+            chr1df = chr1df[['start', filename]]
             if first:
                 globdf = chr1df
                 first = False
