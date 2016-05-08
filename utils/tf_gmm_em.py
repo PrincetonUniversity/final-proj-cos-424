@@ -220,4 +220,4 @@ def gd_mle(mus, sigmas, alphas, nsteps, tol, warning=None, verbose=False, minste
     if not at_least_one_conv_early and warning:
         print('Warning, none converged early:', warning)
         
-    return best_ll[1]
+    return best_ll[1].reshape(-1)
