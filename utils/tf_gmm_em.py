@@ -125,7 +125,7 @@ def fit_em(X, initial_mus, max_steps, tol, min_covar=MIN_COVAR_DEFAULT):
         for i in range(max_steps):
             ll = sess.run(tf.reduce_mean(all_ll))
             sess.run((update_mus_step, update_sigmas_step, update_alphas_step))
-            print('EM iteration', i, 'log likelihood', ll)
+            #print('EM iteration', i, 'log likelihood', ll)
             if abs(ll - prev_ll) < tol:
                 break
             prev_ll = ll
