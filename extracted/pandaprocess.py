@@ -9,6 +9,7 @@ global col
 
 
 def main():
+    col = 0
     parse('GSM14217', col)
     parse('GSM14218', col)
 
