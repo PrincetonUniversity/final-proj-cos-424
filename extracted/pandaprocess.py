@@ -5,17 +5,22 @@ import itertools
 import pandas as pd
 #os.chdir("/mydir")
 
-global col 
 
 
 def main():
-    col = 0
-    parse('GSM14217', col)
-    parse('GSM14218', col)
-
-
-def parse(prefix, col):
+    global globdf
+    global first 
     first = True
+    globdf = pd.DataFrame(columns=['start'])
+    parse('GSM1421', globdf, first)
+
+    globdf.to_csv('last.csv', sep='\t')  
+
+
+def parse(prefix, globdfval, firstval):
+    global first 
+    global globdf 
+    first = firstval
     for file in sorted(glob.glob(prefix + '*.txt')):
         filename = os.path.basename(file)[:10]
         print filename
@@ -40,13 +45,7 @@ def parse(prefix, col):
                 first = False
             else:
                 globdf = pd.merge(globdf, chr1df, on='start', how='inner')
-
-            
-            # print col
-            #print globdf.head()    
-        col = col +1        
-    # save
-    globdf.to_csv(prefix + '.csv', sep='\t')        
+          
 
 if __name__ == "__main__":
         main()
