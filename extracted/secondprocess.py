@@ -11,8 +11,9 @@ global globdf
 first = True
 
 for file in glob.glob('*.csv'):
+    print os.path.basename(file)
     with open(file, 'r') as csvfile:
-
+        
         filedf = pd.read_csv(csvfile, sep='\t', header = 0)
 
         # processing one file #
