@@ -125,3 +125,9 @@ def load_chromosome_cached(n):
             pickle.dump(t, w)
         print('Done')
         return t
+
+def local_impute(data):
+    #http://stackoverflow.com/questions/9537543/replace-nans-in-numpy-array-with-closest-non-nan-value
+    mask = np.isnan(data)
+    data[mask] = np.interp(np.flatnonzero(mask), np.flatnonzero(~mask), data[~mask])
+    return data
