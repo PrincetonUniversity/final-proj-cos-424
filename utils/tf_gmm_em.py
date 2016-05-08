@@ -168,15 +168,14 @@ class DoubleGDOptimizer(tf.train.GradientDescentOptimizer):
 
 # Given a GMM defined by KxD mus, KxD sigmas, and K alphas, returns the MLE estimate
 # by using gradient descent starting from each mu in mus
-def gd_mle(mus, sigmas, alphas, nsteps, tol, warning=None, verbose=False, minstep=1e-1):
+def gd_mle(mus, sigmas, alphas, nsteps, tol, warning=None, verbose=False, minstep=1e-3):
     # Use GD from each of the means with a step size less than the min distance between those means
     # step size is min(mean diff) * min(mean likelihoods) / sum(adj likelihoods)
     mudist = sklearn.metrics.pairwise.pairwise_distances(mus, metric='l2')
-    alphasM = alphas.reshape(-1, 1)
-    alphadist = sklearn.metrics.pairwise.pairwise_distances(alphasM, metric='l1')
-    min_alpha = np.minimum(np.tile(alphasM, len(alphas)), alphas)
+    alphasM = np.tile(alphas, (len(alphas), 1)).transpose()
+    alpha_sum = np.array([[i+j for j in alphas] for i in alphas])
     steps_per_decay = max(nsteps // 100, 1)
-    step_size = mudist * min_alpha / alphadist / steps_per_decay
+    step_size = mudist * alphasM / alpha_sum / max(steps_per_decay, 2)
     np.fill_diagonal(step_size, np.inf)
     step_size = step_size.min(axis=1)
     best_ll = np.inf, None
