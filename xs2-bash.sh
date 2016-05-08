@@ -1,0 +1,1 @@
+seq 0 40 1000 | sed 'p' | head -n -1 | tail -n +2 | sed '$!N;s/\n/ /'| xargs --max-procs=$(nproc) --replace --verbose /bin/bash -c "/n/fs/cyc424/py/bin/python3 compute-xs2.py {} && mv xs2-\$(echo {} | tr ' ' '-').p data/"
