@@ -15,7 +15,7 @@ def main():
 
 def parse(prefix, col):
     first = True
-    for file in glob.glob(prefix + '*.txt'):
+    for file in sorted(glob.glob(prefix + '*.txt')):
         filename = os.path.basename(file)[:10]
         print filename
         with open(file, 'r') as csvfile:
@@ -45,7 +45,7 @@ def parse(prefix, col):
             #print globdf.head()    
         col = col +1        
     # save
-    globdf.to_csv(prefix + '.csv', sep='\t')        
+    globdf.to_csv('out.csv', sep='\t')        
 
 if __name__ == "__main__":
         main()
