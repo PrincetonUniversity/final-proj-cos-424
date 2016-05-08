@@ -6,28 +6,29 @@ import pandas as pd
 #os.chdir("/mydir")
 
 global col 
-col = 0
+
 
 def main():
-    parse('GSM142175')
-    parse('GSM142176')
-    parse('GSM142177')
-    parse('GSM142178')
-    parse('GSM142179')
-    parse('GSM142180')
-    parse('GSM142181')
-    parse('GSM142182')
-    parse('GSM142183')
-    parse('GSM142184')
-    parse('GSM142185')
-    parse('GSM142186')
-    parse('GSM142187')
-    parse('GSM142188')
-    parse('GSM142189')
-    parse('GSM142190')
+    col = 0
+    parse('GSM142175', col)
+    parse('GSM142176', col)
+    parse('GSM142177', col)
+    parse('GSM142178', col)
+    parse('GSM142179', col)
+    parse('GSM142180', col)
+    parse('GSM142181', col)
+    parse('GSM142182', col)
+    parse('GSM142183', col)
+    parse('GSM142184', col)
+    parse('GSM142185', col)
+    parse('GSM142186', col)
+    parse('GSM142187', col)
+    parse('GSM142188', col)
+    parse('GSM142189', col)
+    parse('GSM142190', col)
 
 
-def parse(prefix)
+def parse(prefix, col):
     first = True
     for file in glob.glob(prefix + '*.txt'):
         print os.path.basename(file)
@@ -60,7 +61,8 @@ def parse(prefix)
     # save
     globdf.to_csv(prefix + '.csv', sep='\t')        
 
-
+if __name__ == "__main__":
+        main()
         
 
 
