@@ -48,11 +48,3 @@ Let `PORT` be some unused socket number (choose something between 10000 and 1500
 1. Set up your `cycles` environment (including activating the virtual Python environment).
 2. In the directory containing the notebook you wish to edit, run `jupyter notebook --no-browser --port=$PORT`
 3. Open your browser locally, and navigate to `localhost:8888`
-
-## Project tasks
-
-1. [SEAN] Retrieve and parse data + get more data from Barbra (WGBS methylation data) - describe its sparsity, number of chromosomes we're learning the clusters from, etc.
-2. [SEAN] Re-run exploratory analysis on the new data, write up section on the dataset.
-3. [VLAD] Write code for diagonal GMM MLE predictor and argmax cluster predictor (also expectation predictor?)
-4. [JERRY] Write TensorFlow EM GMM code for tridiagonal matrix likelihood (inner product).
-5. [SID] Write methods section for GMM EM code and posterior marginalization (theory, no proofs needed).
