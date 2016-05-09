@@ -125,7 +125,7 @@ def fit_em(X, initial_mus, max_steps, tol, min_covar=MIN_COVAR_DEFAULT):
         for i in range(max_steps):
             ll = sess.run(tf.reduce_mean(all_ll))
             sess.run((update_mus_step, update_sigmas_step, update_alphas_step))
-            print('EM iteration', i, 'log likelihood', ll)
+            #print('EM iteration', i, 'log likelihood', ll)
             if abs(ll - prev_ll) < tol:
                 break
             prev_ll = ll
@@ -153,7 +153,7 @@ def marginal_posterior(xs, mus, sigmas, alphas):
     norm = tf_log_sum_exp(ll) # 1xN
     with tf.Session() as sess:
         ll, norm = sess.run((ll, norm))
-    return mus[:, O:D], sigmas[:, O:D], np.transpose(ll / norm)
+    return mus[:, O:D], sigmas[:, O:D], np.transpose(ll - norm)
 
 # A "sparser" estimate which just uses the most likely cluster's mean as the estimate.
 def argmax_exp(mus, sigmas, alphas):
@@ -168,15 +168,14 @@ class DoubleGDOptimizer(tf.train.GradientDescentOptimizer):
 
 # Given a GMM defined by KxD mus, KxD sigmas, and K alphas, returns the MLE estimate
 # by using gradient descent starting from each mu in mus
-def gd_mle(mus, sigmas, alphas, nsteps, tol, warning=None, verbose=False, minstep=1e-1):
+def gd_mle(mus, sigmas, alphas, nsteps, tol, warning=None, verbose=False, minstep=1e-3):
     # Use GD from each of the means with a step size less than the min distance between those means
     # step size is min(mean diff) * min(mean likelihoods) / sum(adj likelihoods)
     mudist = sklearn.metrics.pairwise.pairwise_distances(mus, metric='l2')
-    alphasM = alphas.reshape(-1, 1)
-    alphadist = sklearn.metrics.pairwise.pairwise_distances(alphasM, metric='l1')
-    min_alpha = np.minimum(np.tile(alphasM, len(alphas)), alphas)
+    alphasM = np.tile(alphas, (len(alphas), 1)).transpose()
+    alpha_sum = np.array([[i+j for j in alphas] for i in alphas])
     steps_per_decay = max(nsteps // 100, 1)
-    step_size = mudist * min_alpha / alphadist / steps_per_decay
+    step_size = mudist * alphasM / alpha_sum / max(steps_per_decay, 2)
     np.fill_diagonal(step_size, np.inf)
     step_size = step_size.min(axis=1)
     best_ll = np.inf, None
@@ -220,4 +219,4 @@ def gd_mle(mus, sigmas, alphas, nsteps, tol, warning=None, verbose=False, minste
     if not at_least_one_conv_early and warning:
         print('Warning, none converged early:', warning)
         
-    return best_ll[1].reshape(-1)
+    return best_ll[1].reshape(-1) if best_ll[1] is not None else None

@@ -1,10 +1,14 @@
 # COS424 Final Project
 
-Our final project is an extension to the second assignment, in which we aim to impute the methylation values along an entire chromosome genome sequence for a sparsely-sampled tissue based off 33 samples from other tissues. The 33 given samples are densely-sampled.
+Our final project is an extension to the second assignment, in which we aim to impute the methylation values along an entire chromosome genome sequence for a sparsely-sampled tissue based of 34 samples from other tissues. The 34 given samples are densely-sampled.
+
+4 of the 34 samples were pathological, and thus not used in the model.
 
 ## Overall methodology.
 
-We try to fit a GMM model with off-diagonal bands as nonzero covariances. This is hard because default GMM implementations do not suffice for fitting this model on such a large dataset (each tissue sample has on the order of ~450K values).
+We try to fit a GMM model with off-diagonal bands as nonzero covariances. This is hard because default GMM implementations do not suffice for fitting this model on such a large dataset (each tissue sample has on the order of ~380K values).
+
+We moved away from the off-diagonal model, relying only on the diagonal bands instead. See the paper for justification of the decision.
 
 ## Directory description
 
@@ -48,11 +52,3 @@ Let `PORT` be some unused socket number (choose something between 10000 and 1500
 1. Set up your `cycles` environment (including activating the virtual Python environment).
 2. In the directory containing the notebook you wish to edit, run `jupyter notebook --no-browser --port=$PORT`
 3. Open your browser locally, and navigate to `localhost:8888`
-
-## Project tasks
-
-1. [SEAN] Retrieve and parse data + get more data from Barbra (WGBS methylation data) - describe its sparsity, number of chromosomes we're learning the clusters from, etc.
-2. [SEAN] Re-run exploratory analysis on the new data, write up section on the dataset.
-3. [VLAD] Write code for diagonal GMM MLE predictor and argmax cluster predictor (also expectation predictor?)
-4. [JERRY] Write TensorFlow EM GMM code for tridiagonal matrix likelihood (inner product).
-5. [SID] Write methods section for GMM EM code and posterior marginalization (theory, no proofs needed).
