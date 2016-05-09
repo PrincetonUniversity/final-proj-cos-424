@@ -1,10 +1,14 @@
 # COS424 Final Project
 
-Our final project is an extension to the second assignment, in which we aim to impute the methylation values along an entire chromosome genome sequence for a sparsely-sampled tissue based off 33 samples from other tissues. The 33 given samples are densely-sampled.
+Our final project is an extension to the second assignment, in which we aim to impute the methylation values along an entire chromosome genome sequence for a sparsely-sampled tissue based of 34 samples from other tissues. The 34 given samples are densely-sampled.
+
+4 of the 34 samples were pathological, and thus not used in the model.
 
 ## Overall methodology.
 
-We try to fit a GMM model with off-diagonal bands as nonzero covariances. This is hard because default GMM implementations do not suffice for fitting this model on such a large dataset (each tissue sample has on the order of ~450K values).
+We try to fit a GMM model with off-diagonal bands as nonzero covariances. This is hard because default GMM implementations do not suffice for fitting this model on such a large dataset (each tissue sample has on the order of ~380K values).
+
+We moved away from the off-diagonal model, relying only on the diagonal bands instead. See the paper for justification of the decision.
 
 ## Directory description
 
