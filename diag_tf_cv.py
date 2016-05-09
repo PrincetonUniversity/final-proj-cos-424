@@ -1,4 +1,3 @@
-#get_ipython().magic('matplotlib inline')
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
 import tensorflow as tf
@@ -62,9 +61,10 @@ def MVN(shear, shift):
 # In[10]:
 
 tissues_to_cluster = train_tissues
-X_np = train_df_int[train_tissues].values.transpose()
-
-np.random.shuffle(X_np)
+for i in [14, 25, 26, 33]:
+    tissues_to_cluster.remove('b' + str(i))
+print('running cv on ', tissues_to_cluster)
+X_np = train_df_int[tissues_to_cluster].values.transpose()
 
 # In[11]:
 #print(X_np.shape)
@@ -76,8 +76,7 @@ np.random.shuffle(X_np)
 # TODO: change from mean imputation
 
 #print(X_np.shape)
-X_np_new = X_np[:][:33]
-X_np_new = np.delete(X_np_new, [14,25,26], 0)
+X_np_new = X_np
 #print(X_np_new.shape)
 
 o = np.ones(len(train_df))
