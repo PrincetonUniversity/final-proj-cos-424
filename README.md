@@ -18,6 +18,8 @@ The `methylation-imputation/` directory is the Assigment 2 directory with starte
 
 The `utils/` directory contains various factored helper functions.
 
+The `paper.pdf` file contains the submitted final paper.
+
 The first-level of the git directory contains various `jupyter` notebooks that run the models in our paper in addition to the directories named above.
 
 ## Installation
